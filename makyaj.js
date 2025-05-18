@@ -1,6 +1,5 @@
 const img = document.getElementById('richardFoto');
-
-const canvas = document.createElement('canvas');
+const canvas = document.getElementById('makyajCanvas');
 const ctx = canvas.getContext('2d');
 
 function setupCanvas() {
@@ -10,53 +9,52 @@ function setupCanvas() {
     canvas.style.top = '0';
     canvas.style.left = '0';
     canvas.style.pointerEvents = 'auto';
-
     img.parentNode.style.position = 'relative';
-    img.parentNode.appendChild(canvas);
 }
 
 setupCanvas();
 
 let drawing = false;
-let brushColor = '#ff69b4'; // default renk
-let brushSize = 2;
+let brushColor = '#ff69b4';
+let brushSize = 5;
 
 function makyajYap(color) {
-    brushColor = '#' + color;
+    brushColor = color;
 }
 
-// Fare hareketleriyle çizimi kontrol et
-
-canvas.addEventListener('mousedown', (e) => {
+function startDrawing(e) {
     drawing = true;
     draw(e);
-});
+}
 
-canvas.addEventListener('mouseup', () => {
-    drawing = false;
-    ctx.beginPath(); // yeni çizime başlamak için path reset
-});
-
-canvas.addEventListener('mouseout', () => {
+function stopDrawing() {
     drawing = false;
     ctx.beginPath();
-});
+}
 
-canvas.addEventListener('mousemove', draw);
+function getPosition(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = (e.clientX || e.touches[0].clientX) - rect.left;
+    const y = (e.clientY || e.touches[0].clientY) - rect.top;
+    return { x, y };
+}
 
 function draw(e) {
     if (!drawing) return;
-
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
+    const { x, y } = getPosition(e);
     ctx.lineWidth = brushSize;
     ctx.lineCap = 'round';
     ctx.strokeStyle = brushColor;
-
     ctx.lineTo(x, y);
     ctx.stroke();
     ctx.beginPath();
     ctx.moveTo(x, y);
 }
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseleave', stopDrawing);
+canvas.addEventListener('touchstart', startDrawing);
+canvas.addEventListener('touchend', stopDrawing);
+canvas.addEventListener('touchmove', draw);
