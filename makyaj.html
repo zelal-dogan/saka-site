@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Richard OLD'a Makyaj Yap</title>
+    <link rel="stylesheet" href="makyaj.css" />
+</head>
+<body>
+    <div class="sol-menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Kimdir ?</a></li>
+                <li><a href="gercekYuzu.html">Gerçek Yüzü</a></li>
+                <li><a href="yorumlar.html">Hakkında Yorumlar</a></li>
+                <li><a href="makyaj.html">Ona Makyaj yap</a></li>
+                <li><a href="vurma.html">Ona Vur</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main class="makyaj">
+        <!-- Başlık Yukarıda -->
+        <h2 class="sayfa-baslik">Richard OLD'a Makyaj Yap</h2>
+
+        <div class="makyaj-icerik">
+            <div class="makyaj-alani">
+                <img id="richardFoto" src="richard3.png" alt="Richard Foto" />
+            </div>
+
+            <div class="makyaj-paletleri">
+                <h3>Far Paleti</h3>
+                <div class="far-paleti">
+                    <button class="far" style="background-color: #ff69b4" onclick="makyajYap('ff69b4')"></button>
+                    <button class="far" style="background-color: #ff6347" onclick="makyajYap('ff6347')"></button>
+                    <button class="far" style="background-color: #6a5acd" onclick="makyajYap('6a5acd')"></button>
+                    <button class="far" style="background-color: #ffa500" onclick="makyajYap('ffa500')"></button>
+                </div>
+
+                <h3>Ruj Renkleri</h3>
+                <div class="ruj-paleti">
+                    <button class="ruj" style="background-color: #e91e63" onclick="makyajYap('e91e63')"></button>
+                    <button class="ruj" style="background-color: #d32f2f" onclick="makyajYap('d32f2f')"></button>
+                    <button class="ruj" style="background-color: #9c27b0" onclick="makyajYap('9c27b0')"></button>
+                    <button class="ruj" style="background-color: #673ab7" onclick="makyajYap('673ab7')"></button>
+                </div>
+
+                <h3>Allık Renkleri</h3>
+                <div class="allik-paleti">
+                    <button class="allik" style="background-color: #f28b82;" onclick="makyajYap('f28b82')"></button>
+                    <button class="allik" style="background-color: #e57373;" onclick="makyajYap('e57373')"></button>
+                    <button class="allik" style="background-color: #ff8a65;" onclick="makyajYap('ff8a65')"></button>
+                    <button class="allik" style="background-color: #ba68c8;" onclick="makyajYap('ba68c8')"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="makyaj.js"></script>
+</body>
+</html>

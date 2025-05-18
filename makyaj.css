@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(46, 53, 186);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+main.makyaj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    gap: 20px;
+    margin-left: 180px;
+}
+
+.sayfa-baslik {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+    color: black;
+}
+
+.makyaj-icerik {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.makyaj-alani {
+    position: relative;
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.makyaj-alani img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.makyaj-paletleri {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.far-paleti button, .ruj-paleti button, .allik-paleti button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.far-paleti button:hover, .ruj-paleti button:hover, .allik-paleti button:hover {
+    transform: scale(1.2);
+}
+
+.sol-menu {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    width: 180px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sol-menu nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sol-menu nav ul li {
+    margin: 15px 0;
+}
+
+.sol-menu nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sol-menu nav ul li a:hover {
+    text-decoration: underline;
+}
+
